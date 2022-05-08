@@ -6,7 +6,11 @@ export const getPlans = async (req: Request, res: Response) =>{
         const plans = await connection("plan_info");
 
         res.status(200).send(plans);
-    } catch (error: any){
-        res.send(error.message || error.sqlMessage);
+    } catch (error){
+        if(error instanceof Error){
+            res.send(error.message);
+        }else{
+            res.send(error);
+        };
     };
 };

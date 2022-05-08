@@ -7,7 +7,11 @@ export const deleteResult = async (req: Request, res: Response): Promise<void> =
         .del(); 
 
         res.status(200).send("Resultado deletado!");
-    } catch (error: any) {
-        res.send(error.message || error.sqlMessage)
+    } catch (error) {
+        if(error instanceof Error){
+            res.send(error.message);
+        }else{
+            res.send(error);
+        };
     };
 };

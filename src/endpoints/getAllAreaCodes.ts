@@ -6,7 +6,11 @@ export const getAllAreaCodes = async (req: Request, res: Response): Promise<void
         const result = await connection("area_code_list");
 
         res.status(200).send(result);
-    } catch (error: any) {
-        res.send(error.message || error.sqlMessage);
+    } catch (error) {
+        if(error instanceof Error){
+            res.send(error.message);
+        }else{
+            res.send(error);
+        };
     };
 };

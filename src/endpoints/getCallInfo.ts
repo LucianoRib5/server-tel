@@ -11,7 +11,11 @@ export const getCallInfo = async( req: Request, res: Response): Promise<void> =>
         .where("destiny", "like", `%${destiny}%`);
 
         res.status(200).send(presets);
-    } catch(error: any){
-        res.send(error.message || error.sqlMessage);
+    } catch(error){
+        if(error instanceof Error){
+            res.send(error.message)
+        }else{
+            res.send(error)
+        };
     };
 };
