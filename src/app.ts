@@ -6,7 +6,8 @@ export const app = express()
 
 app.use(express.json())
 app.use(cors())
-const { PORT = 3003 } = process.env
+
+const { PORT = 3003 } = process.env;
 
 const server = app.listen(PORT, () => {
    if (server) {
