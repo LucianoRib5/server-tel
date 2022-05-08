@@ -37,11 +37,16 @@ export const createResults = async (req: Request, res: Response): Promise<void> 
 
         res.status(201).send("Resultado criado!")
 
-    } catch (error: any) {
-        switch (error.message) {
-            case errors.UNPROCESSABLE_ENTITY.message:
-                res.status(errors.UNPROCESSABLE_ENTITY.errorCode).send(errors.UNPROCESSABLE_ENTITY.message);                
-                break;
-        };
+    } catch (error) {
+        if(error instanceof Error){
+            res.send(error.message);
+        }else{
+            switch (error) {
+                case errors.UNPROCESSABLE_ENTITY.message:
+                    res.status(errors.UNPROCESSABLE_ENTITY.errorCode).send(errors.UNPROCESSABLE_ENTITY.message);                
+                    break;
+            };
+
+        }
     };
 };

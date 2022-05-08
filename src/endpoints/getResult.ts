@@ -6,7 +6,11 @@ export const getResult= async (req: Request, res: Response): Promise<void> =>{
         const result = await connection("results");
 
         res.status(200).send(result[0]);
-    } catch (error: any) {
-        res.send(error.message || error.sqlMessage);
+    } catch (error) {
+        if(error instanceof Error){
+            res.send(error.message);
+        }else{
+            res.send(error);
+        };
     };
 };
