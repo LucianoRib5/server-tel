@@ -1,0 +1,62 @@
+[
+    {
+        "source": "11",
+        "destiny": "16",
+        "value_per_minute": 1.90 
+    },
+    {
+        "source": "11",
+        "destiny": "17",
+        "value_per_minute": 1.70 
+    },
+    {
+        "source": "11",
+        "destiny": "18",
+        "value_per_minute": 0.90 
+    },
+    {
+        "source": "16",
+        "destiny": "11",
+        "value_per_minute": 2.90 
+    },
+    {
+        "source": "16",
+        "destiny": "17",
+        "value_per_minute": 1.50 
+    },
+    {
+        "source": "16",
+        "destiny": "18",
+        "value_per_minute": 1.80 
+    },
+    {
+        "source": "17",
+        "destiny": "11",
+        "value_per_minute": 2.70 
+    },
+    {
+        "source": "17",
+        "destiny": "16",
+        "value_per_minute": 2.10 
+    },
+    {
+        "source": "17",
+        "destiny": "18",
+        "value_per_minute": 1.50 
+    },
+    {
+        "source": "18",
+        "destiny": "11",
+        "value_per_minute": 1.90 
+    },
+    {
+        "source": "18",
+        "destiny": "16",
+        "value_per_minute": 2.20 
+    },
+    {
+        "source": "18",
+        "destiny": "17",
+        "value_per_minute": 1.90 
+    }
+]

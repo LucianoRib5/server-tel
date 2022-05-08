@@ -1,0 +1,28 @@
+### Pegar todas as predefinições de chamadas e preços.
+GET http://localhost:3003/presets
+
+### Pegar uma chamada especifíca.
+GET http://localhost:3003/preset/18/11
+
+### Pegar todos os planos.
+GET http://localhost:3003/plans
+
+### Pegar todos os DDDs.
+GET http://localhost:3003/area
+
+### Criar resultado.
+POST http://localhost:3003/result
+Content-Type: application/json
+
+{
+    "source": "11",
+    "destiny": "17",
+    "time": 50,
+    "plan": "FaleMais 30"
+}
+
+### Pegar resultado.
+GET http://localhost:3003/result
+
+### Deletar resultado.
+DELETE http://localhost:3003/result
